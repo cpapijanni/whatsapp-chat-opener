@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Chat Opener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #25d366;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #1ebe57;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>WhatsApp Chat Opener</h2>
+        <input type="text" id="phoneNumber" placeholder="Enter phone number">
+        <button onclick="openWhatsAppChat()">Open WhatsApp Chat</button>
+    </div>
+
+    <script>
+        function openWhatsAppChat() {
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            if (phoneNumber === '') {
+                alert('Please enter a phone number');
+                return;
+            }
+
+            var url = "https://wa.me/" + encodeURIComponent(phoneNumber);
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
