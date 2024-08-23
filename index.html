@@ -54,12 +54,13 @@
     <script>
         function openWhatsAppChat() {
             var phoneNumber = document.getElementById('phoneNumber').value;
+            var countryCode = '+91';
             if (phoneNumber === '') {
                 alert('Please enter a phone number');
                 return;
             }
 
-            var url = "https://wa.me/" + encodeURIComponent('+91' + phoneNumber);
+            var url = "https://wa.me/" + encodeURIComponent(countryCode + phoneNumber);
             window.open(url, '_blank');
         }
     </script>
